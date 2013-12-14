@@ -1,0 +1,43 @@
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    testCompile "junit:junit:4.11"
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "http://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath group: 'org.bitbucket.grimrose', name: 'watchdog-continuous-test-plugin', version: '1.0-SNAPSHOT'
+    }
+}
+
+apply plugin: 'watchdog-continuous-test'
+
+test {
+    useJUnit {
+        includeCategories 'org.gdcr.gameoflife.WorkInProgress'
+    }
+}
+
+watchdog {
+    tasks = ['test']
+    dirs = sourceSets.test.java.srcDirs.flatten().toList() + sourceSets.main.java.srcDirs.flatten().toList()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = 1.6
+}

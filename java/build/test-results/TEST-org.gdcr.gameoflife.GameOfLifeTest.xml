@@ -1,0 +1,7 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="org.gdcr.gameoflife.GameOfLifeTest" tests="1" failures="0" errors="0" timestamp="2013-12-13T21:04:33" hostname="Leandogs-MacBook-Pro-3.local" time="0.001">
+  <properties/>
+  <testcase name="sample" classname="org.gdcr.gameoflife.GameOfLifeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
