@@ -9,6 +9,6 @@ public class GameOfLifeTest {
 
     @Test 
     public void sample() {
-        assertEquals("Gradle is gr8!!" ,    "Gradle is gr8");
+        assertEquals("Gradle is gr8" ,    "Gradle is gr8");
     }
 }
